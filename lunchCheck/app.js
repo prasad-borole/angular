@@ -5,7 +5,7 @@
 
   lunchCheckController.$inject = ['$scope'];
   function lunchCheckController($scope) {
-    $scope.customStyle={};
+    $scope.textColor="";
     $scope.borderColor = "";
     $scope.calculateLunch = function () {
       var str=$scope.name;
@@ -20,24 +20,20 @@
         }
         console.log("C:"+count);
         if(count==0){
-          $scope.customStyle.style = {"color":"red"};
-          $scope.borderColor = "red";
+          $scope.textColor = $scope.borderColor = "red";
           $scope.output="Please enter data first";
         }
         else if(count<=3){
-          $scope.customStyle.style = {"color":"green"};
-          $scope.borderColor = "green";
+          $scope.textColor = $scope.borderColor = "green";
           $scope.output="Enjoy!";
         }
         else {
-          $scope.customStyle.style = {"color":"green"};
-          $scope.borderColor = "green";
+          $scope.textColor = $scope.borderColor = "green";
           $scope.output="Too much!";
         }
       }
       else{
-        $scope.customStyle.style = {"color":"red"};
-        $scope.borderColor = "red";
+        $scope.textColor = $scope.borderColor = "red";
         $scope.output="Please enter data first";
       }
     }
